@@ -1,0 +1,138 @@
+[
+  {
+    "topic": "Артикль",
+    "slug": "1_articles",
+    "bookPage": 5,
+    "pdfPage": 8,
+    "startExercise": 1,
+    "endExercise": 88
+  },
+  {
+    "topic": "Существительное",
+    "slug": "2_nouns",
+    "bookPage": 71,
+    "pdfPage": 74,
+    "startExercise": 89,
+    "endExercise": 101
+  },
+  {
+    "topic": "Местоимения some, any, по, every и их производные",
+    "slug": "3_pronouns",
+    "bookPage": 79,
+    "pdfPage": 82,
+    "startExercise": 102,
+    "endExercise": 121
+  },
+  {
+    "topic": "Much, many, (a) little, (a) few",
+    "slug": "4_quantifiers",
+    "bookPage": 95,
+    "pdfPage": 98,
+    "startExercise": 122,
+    "endExercise": 130
+  },
+  {
+    "topic": "Степени сравнения прилагательных",
+    "slug": "5_comparable",
+    "bookPage": 101,
+    "pdfPage": 104,
+    "startExercise": 131,
+    "endExercise": 143
+  },
+  {
+    "topic": "Предлоги",
+    "slug": "6_prepositions",
+    "bookPage": 111,
+    "pdfPage": 114,
+    "startExercise": 144,
+    "endExercise": 162
+  },
+  {
+    "topic": "Употребление времен",
+    "slug": "7_tenses",
+    "bookPage": 128,
+    "pdfPage": 131,
+    "startExercise": 163,
+    "endExercise": 279
+  },
+  {
+    "topic": "Passive Voice",
+    "slug": "8_passive-voice",
+    "bookPage": 234,
+    "pdfPage": 237,
+    "startExercise": 280,
+    "endExercise": 309
+  },
+  {
+    "topic": "Согласование времен. Косвенная речь",
+    "slug": "9_indirect-speech",
+    "bookPage": 256,
+    "pdfPage": 259,
+    "startExercise": 310,
+    "endExercise": 365
+  },
+  {
+    "topic": "Инфинитив",
+    "slug": "10_infinitive",
+    "bookPage": 294,
+    "pdfPage": 297,
+    "startExercise": 366,
+    "endExercise": 376
+  },
+  {
+    "topic": "Причастие",
+    "slug": "11_participle",
+    "bookPage": 305,
+    "pdfPage": 308,
+    "startExercise": 377,
+    "endExercise": 398
+  },
+  {
+    "topic": "Герундий",
+    "slug": "12_gerund",
+    "bookPage": 325,
+    "pdfPage": 328,
+    "startExercise": 399,
+    "endExercise": 425
+  },
+  {
+    "topic": "Причастие, герундий и отглагольное существительное",
+    "slug": "13_participle-gerund-verbal-noun",
+    "bookPage": 346,
+    "pdfPage": 349,
+    "startExercise": 426,
+    "endExercise": 431
+  },
+  {
+    "topic": "Сложное дополнение (Complex Object)",
+    "slug": "14_complex-object",
+    "bookPage": 352,
+    "pdfPage": 355,
+    "startExercise": 432,
+    "endExercise": 462
+  },
+  {
+    "topic": "Сложное подлежащее (Complex Subject)",
+    "slug": "15_complex-subject",
+    "bookPage": 374,
+    "pdfPage": 377,
+    "startExercise": 463,
+    "endExercise": 469
+  },
+  {
+    "topic": "Условные предложения. Сослагательное наклонение после 'I wish'",
+    "slug": "16_conditional",
+    "bookPage": 382,
+    "pdfPage": 385,
+    "startExercise": 470,
+    "endExercise": 492
+  },
+  {
+    "topic": "Модальные глаголы",
+    "slug": "17_modal-verbs",
+    "bookPage": 399,
+    "pdfPage": 402,
+    "startExercise": 493,
+    "endExercise": 567
+  }
+]
