@@ -1,8 +1,8 @@
 
 
 def main():
-    grammar_exercises_pdf_path = "data/exercies/grammar-exercises.pdf"
-    grammar_keys_pdf_path = "data/keys/grammar-keys.pdf"
+    grammar_exercises_pdf_path = "content/exercies/grammar-exercises.pdf"
+    grammar_keys_pdf_path = "content/keys/grammar-keys.pdf"
 
     # import PyPDF2
     # grammar_exercises_pdf = PyPDF2.PdfFileReader()

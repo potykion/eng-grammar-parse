@@ -23,13 +23,26 @@ def parse_tasks_text(text: str) -> List[str]:
     return sentences
 
 
-def parse_exercise(exercise_text: str) -> dict:
-    text = exercise_text.strip().split("\n", 2)
-    return {
-        'exercise_number': int(re.search(r"Упражнение (\d+)", text[0]).group(1)),
-        'exercise_text': text[1],
-        'tasks': parse_tasks_text(text[2])
+def parse_exercise(exercise_text: str, parse_exercise_text: bool = True) -> dict:
+    """
+    Парсит текст упражнения в объектик: {exercise_number, exercise_text, tasks}
+
+    :param exercise_text: Текст упражнения
+    :param parse_exercise_text:
+        В результате парса, получаем словарик с ключом {exercise_text} - это текст упражнения, например:
+        Вставьте одно из следующих слов: some, any, по, the, а или оставьте пропуски незаполненными.
+        Если {parse_exercise_text} = True, то {exercise_text} будет парсится, иначе нет
+    :return: Объектик
+    """
+    text = exercise_text.strip().split("\n", 2 if parse_exercise_text else 1)
+    res = {
+        'exercise_number': int(re.search(r"Упражнение\s+(\d+)", text[0]).group(1)),
+        'tasks': parse_tasks_text(text[-1])
     }
+    if parse_exercise_text:
+        res['exercise_text'] = text[1]
+
+    return res
 
 
 def json_format(obj: Union[dict, list]) -> str:
@@ -37,31 +50,14 @@ def json_format(obj: Union[dict, list]) -> str:
 
 
 if __name__ == '__main__':
-    text = """Упражнение 121
-Вставьте одно из следующих слов: some, any, по, the, а или оставьте пропуски незаполненными.
+    text = """Упражнение  121
+1. no, the, some. 2. any. 3. some. 4. the, the. 5. any,
+the. 6. -, the. 7. a, -. 8. -. 9. some, some.  10. some.
+11. -, -.
+12.  -,  the.  13.  the,  the.  14.  the,  the.
 
-1. I'm afraid there's ... juice in ... fridge. Would
-you like ... lemonade? 2. My friends from Chicago
-can't speak ... foreign languages. 3. She bought ...
-new books yesterday. 4. Where are ... books which
-you borrowed from ... library yesterday? 5. Did you
-buy ... apples when you were at ... shop? 6. We could
-not skate because there was ... snow on ... ice. 7. ...
-house must; have ... windows. 8. Most people like
-... music. 9. There was ... meat on Nick's plate and ...
-fish on Tom's. 10. We saw ... houses in the distance.
-11. ... cats like ... milk. 12. They stopped in ... front
-of ... house where Tom lived. 13.1 showed him ... way
-to ... station. 14. What is ... name of ... street on
-which you live? 15. I want to say ... words to your
-sister. 16. ... tea in this glass is cold. 17. ... sun was
-high in ... sky. 18. Oh, there are ... apples in ... fruit
-bowl: ... children have eaten all of them. Please put
-... apples into ... fruit bowl. 19. Yesterday we had ...
-fish for dinner. 20. He gave me ... coffee. 21. I drank
-... cup of ... coffee after ... dinner. 22. What ... success! 23. We didn't have ... problems in using this
-printer with ... computer. 24. Nowadays, watching
-... TV is ... complete waste of ... time.
-"""
-    print(json_format(ex := parse_exercise(text)))
+15. some.  16. the.  17. the, the.  18.  no, the, the, some,
+the.  19. -.  20. some. 21. a, -,  -.   22. a. 23. any, any.
+24. -, a, -."""
+    print(json_format(ex := parse_exercise(text, parse_exercise_text=False)))
     print(len(ex["tasks"]))
