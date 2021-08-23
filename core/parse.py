@@ -19,7 +19,11 @@ def parse_tasks_text(text: str) -> List[str]:
             sentences.append(sentence)
             number += 1
 
-    sentences = [s.strip() for s in sentences]
+    sentences = [
+        re.sub(r"^\. ", "", s.replace("...", "_").strip())
+        for s in sentences
+    ]
+
     return sentences
 
 
@@ -36,11 +40,11 @@ def parse_exercise(exercise_text: str, parse_exercise_text: bool = True) -> dict
     """
     text = exercise_text.strip().split("\n", 2 if parse_exercise_text else 1)
     res = {
-        'exercise_number': int(re.search(r"Упражнение\s+(\d+)", text[0]).group(1)),
+        'exerciseNumber': int(re.search(r"Упражнение\s+(\d+)", text[0]).group(1)),
         'tasks': parse_tasks_text(text[-1])
     }
     if parse_exercise_text:
-        res['exercise_text'] = text[1]
+        res['exerciseText'] = text[1]
 
     return res
 
@@ -50,14 +54,11 @@ def json_format(obj: Union[dict, list]) -> str:
 
 
 if __name__ == '__main__':
-    text = """Упражнение  121
-1. no, the, some. 2. any. 3. some. 4. the, the. 5. any,
-the. 6. -, the. 7. a, -. 8. -. 9. some, some.  10. some.
-11. -, -.
-12.  -,  the.  13.  the,  the.  14.  the,  the.
-
-15. some.  16. the.  17. the, the.  18.  no, the, the, some,
-the.  19. -.  20. some. 21. a, -,  -.   22. a. 23. any, any.
-24. -, a, -."""
+    text = """Упражнение  130
+1. a little. 2. much, little. 3. a few. 4. few. 5. a little,
+a few.  6.  a few.  7.  a little,  a little.  8.  few.  9.  a  little.
+10.  a  few.  11.  a  little.  12.  a  little.  13.  many,  much.
+14. much.  15. much.  16.  a little.  17.  little.  18. little."""
+    # print(json_format(ex := parse_exercise(text, parse_exercise_text=True)))
     print(json_format(ex := parse_exercise(text, parse_exercise_text=False)))
     print(len(ex["tasks"]))
