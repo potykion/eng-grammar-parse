@@ -54,11 +54,34 @@ def json_format(obj: Union[dict, list]) -> str:
 
 
 if __name__ == '__main__':
-    text = """Упражнение  130
-1. a little. 2. much, little. 3. a few. 4. few. 5. a little,
-a few.  6.  a few.  7.  a little,  a little.  8.  few.  9.  a  little.
-10.  a  few.  11.  a  little.  12.  a  little.  13.  many,  much.
-14. much.  15. much.  16.  a little.  17.  little.  18. little."""
+    text = """
+Упражнение  148
+
+1. Where is Nick?  — He is at the lecture.  2. Father 
+goes  to  work  every  day.  3.  Yesterday  father  was  at 
+work and  mother was at home.  4.  Yesterday I went  to 
+the  library,  I  borrowed  a very  interesting book  at  the 
+library. 5. Kate was sitting at the table. There were books 
+and exercise books on the table.  Her father went up to 
+the table and put a vase on the table. He put some flowers 
+into the vase.  6. We went to the exhibition yesterday. 
+We saw a lot of paintings at the exhibition.  7.  Where 
+is Tom? — He is at the stadium. He always goes to the 
+stadium on Sunday. And his sister goes to the swimming 
+pool. She is at the swimming pool now. 8. Do you like 
+going to the theatre?  9.  When we came to the railway 
+station, we put our things on the platform and sat down 
+on a bench.  Mother went to the shop and bought some 
+lemonade.  10. At the lesson yesterday the teacher said 
+to me,  “There are  two  mistakes  on the blackboard.  Go 
+to the blackboard and correct the mistakes!”  11.  Were 
+you  at  the  concert  yesterday?  —  No,  we  worked  at 
+the  library  and  then  we  went  to  the  park.  We  played 
+in the park and then we sat on the grass.  12. There are 
+not so many children in the yard today.  13.  There are 
+so many students at the lecture today.
+
+"""
     # print(json_format(ex := parse_exercise(text, parse_exercise_text=True)))
     print(json_format(ex := parse_exercise(text, parse_exercise_text=False)))
     print(len(ex["tasks"]))
