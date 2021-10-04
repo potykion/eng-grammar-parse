@@ -54,34 +54,34 @@ def json_format(obj: Union[dict, list]) -> str:
 
 
 if __name__ == '__main__':
-    text = """
-Упражнение  148
-
-1. Where is Nick?  — He is at the lecture.  2. Father 
-goes  to  work  every  day.  3.  Yesterday  father  was  at 
-work and  mother was at home.  4.  Yesterday I went  to 
-the  library,  I  borrowed  a very  interesting book  at  the 
-library. 5. Kate was sitting at the table. There were books 
-and exercise books on the table.  Her father went up to 
-the table and put a vase on the table. He put some flowers 
-into the vase.  6. We went to the exhibition yesterday. 
-We saw a lot of paintings at the exhibition.  7.  Where 
-is Tom? — He is at the stadium. He always goes to the 
-stadium on Sunday. And his sister goes to the swimming 
-pool. She is at the swimming pool now. 8. Do you like 
-going to the theatre?  9.  When we came to the railway 
-station, we put our things on the platform and sat down 
-on a bench.  Mother went to the shop and bought some 
-lemonade.  10. At the lesson yesterday the teacher said 
-to me,  “There are  two  mistakes  on the blackboard.  Go 
-to the blackboard and correct the mistakes!”  11.  Were 
-you  at  the  concert  yesterday?  —  No,  we  worked  at 
-the  library  and  then  we  went  to  the  park.  We  played 
-in the park and then we sat on the grass.  12. There are 
-not so many children in the yard today.  13.  There are 
-so many students at the lecture today.
-
-"""
-    # print(json_format(ex := parse_exercise(text, parse_exercise_text=True)))
-    print(json_format(ex := parse_exercise(text, parse_exercise_text=False)))
+    text = """Упражнение 161
+Вставьте предлоги, где необходимо.
+1. We tried to speak _ him, but he did not want
+to listen _ us. He did not even look _ us and did not
+answer _ our questions. 2. Your brother complains
+_ you. He says you always laugh _ him, never speak
+_ him and never answer _ his questions. 3. When
+I entered _ the room, everybody looked _ me with
+surprise: they had not expected _ mo. 4. At the end _
+the street she turned _ the corner, walked _ the bus
+stop and began waiting _ the bus. 5. My mother is
+afraid _ rats. 6. “What do you complain _?” asked
+the doctor. 7. Don't enter _ the room. 8. What are
+you laughing _ ? 9. They did not want to listen _
+me. 10. Wait _ me. I'll be back _ a few minutes.
+11. Yesterday the teacher spoke _ us about the
+architecture _ St Petersburg. 12. My grandmother
+often complains _ headache. 13. I am sorry, I cannot speak _ you now, the professor is waiting _ me.
+I must go _ the institute and explain _ him some
+details _ our work. Come _ the evening, I shall listen
+_ you very attentively and answer _ all your questions. 14. Turn _ the corner _ the house and look _
+the flowers grown _ my mother: aren't they beautiful? 15. He was an excellent pupil, and the teachers never complained _ him. 16. She complained _
+feeling bad and could not answer _ the questions _
+the teacher. 17. _ nine o'clock the lecturer entered
+_ the hall, walked up _ the table, put his bag _ it,
+looked _ everybody and began his lecture. The lecture, as all the lectures _ this professor, was very
+interesting, and the students listened _ him with
+great attention."""
+    print(json_format(ex := parse_exercise(text, parse_exercise_text=True)))
+    # print(json_format(ex := parse_exercise(text, parse_exercise_text=False)))
     print(len(ex["tasks"]))
